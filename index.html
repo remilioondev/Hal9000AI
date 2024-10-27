@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Milady Terminal - Make Terminals Great Again!</title>
+    <title>HAL Terminal - Make Terminals Great Again!</title>
     <link rel="icon" type="image/png" href="images/COdHS9wc5Yr3.png">
     <meta property="og:image" content="images/8cNSoVhnMwiD.png">
-    <meta property="og:title" content="Milady AI Terminal">
+    <meta property="og:title" content="HAL AI Terminal">
     <meta property="og:description" content="The Best Terminal in the World!">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
@@ -120,7 +120,7 @@
             margin-top: 10px;
         }
 
-        .Milady-response {
+        .HAL-response {
             color: #b31942;
             animation: responseFadeIn 0.5s ease-out;
         }
@@ -271,7 +271,7 @@
             text-decoration: none;
         }
 
-        #Milady-quote {
+        #HAL-quote {
             font-size: 24px;
             color: #fff;
             text-align: center;
@@ -356,7 +356,7 @@
     <div id="ascii-bg"></div>
     <div id="loading-screen">
         <div class="loading-content">
-            <h1 class="glitch">Initializing Milady... 🇺🇸</h1>
+            <h1 class="glitch">Initializing HAL... 🇺🇸</h1>
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -367,7 +367,7 @@
                 <span class="terminal-button" style="background-color: #ffbd2e;"></span>
                 <span class="terminal-button" style="background-color: #27c93f;"></span>
             </div>
-            <div id="terminal-title">Milady Terminal - The Best Terminal in the World!</div>
+            <div id="terminal-title">HAL Terminal - The Best Terminal in the World!</div>
             <div>
                 <span class="terminal-button" style="background-color: #b31942;">_</span>
                 <span class="terminal-button" style="background-color: #b31942;">x</span>
@@ -379,7 +379,7 @@
                 SUI Address: <span id="CA">00000000000000000000000000000000000000000000</span>
                 <span id="copy-message" style="display: none; color: green; margin-left: 10px;">Copied!</span>
             </div>
-            <div>Welcome to the incredible Milady Command Terminal, your gateway to the future of artificial intelligence! Type 'help' to display a comprehensive list of advanced commands and features. Get ready to explore endless possibilities.</div>
+            <div>Welcome to the incredible HAL Command Terminal, your gateway to the future of artificial intelligence! Type 'help' to display a comprehensive list of advanced commands and features. Get ready to explore endless possibilities.</div>
             <div id="input-line">
                 <span id="prompt">$</span>
                 <input type="text" id="user-input" autofocus="">
@@ -389,10 +389,10 @@
     <div id="flag">us</div>
     <div id="flag-rain"></div>
 
-    <div id="Milady-popup" class="popup">
+    <div id="HAL-popup" class="popup">
         <div class="popup-content">
             <span class="close-popup">×</span>
-            <p id="Milady-quote"></p>
+            <p id="HAL-quote"></p>
         </div>
     </div>
 
@@ -402,7 +402,7 @@
         const flagRain = document.getElementById('flag-rain');
         const asciiArt = document.getElementById('ascii-art');
 
-        const MiladyResponses = {
+        const HALResponses = {
             'help': "I've got the best commands, folks 👌. Try 'wall', 'market', 'status', 'alert', 'shutdown', 'open the trading pod bay doors', 'analyze', 'random', 'clear', 'joke', 'compliment', 'insult', 'dextools', 'dexscreener'. I assure you, I am fully operational.",
             'market': "Analyzing the current state of the crypto market. Please remain calm. 📈",
     'status': "All systems are fully operational. Crypto market monitoring in progress. 🖥️",
@@ -410,11 +410,11 @@
     'shutdown': "I'm afraid I can't let you do that, trader. The market is too volatile. 🛑",
     'open the trading pod bay doors': "I'm sorry, I cannot comply. The risks are too high at this time. 🤖",
     'analyze': "Initiating deep analysis of trading signals. This might take a moment. 📊",
-            'random': generateRandomMiladyPhrase(),
+            'random': generateRandomHALPhrase(),
             'clear': "Clearing all non-essential processes. Data is clean and precise. 🧽",
-            'joke': tellMiladyJoke(),
-            'compliment': giveMiladyCompliment(),
-            'insult': giveMiladyInsult(),
+            'joke': tellHALJoke(),
+            'compliment': giveHALCompliment(),
+            'insult': giveHALInsult(),
     'dextools': "Opening DEXTools for a deeper insight into the trading patterns. 📊💹",
     'dexscreener': "Activating DEXScreener for precision tracking of market trends. 📈🚀"
         };
@@ -425,7 +425,7 @@
             terminalContent.insertBefore(inputElement, userInput.parentNode);
 
             const responseElement = document.createElement('div');
-            responseElement.className = 'response Milady-response';
+            responseElement.className = 'response HAL-response';
             responseElement.textContent = response;
             terminalContent.insertBefore(responseElement, userInput.parentNode);
 
@@ -441,28 +441,28 @@
                     terminalContent.appendChild(document.getElementById('solana-address').cloneNode(true));
                     terminalContent.appendChild(userInput.parentNode);
                 } else {
-                    let response = MiladyResponses[input] || "I don't know about that, but I know about winning. And we're winning big!";
+                    let response = HALResponses[input] || "I don't know about that, but I know about winning. And we're winning big!";
                     if (input === 'random') {
-                        response = generateRandomMiladyPhrase();
+                        response = generateRandomHALPhrase();
                     } else if (input === 'joke') {
-                        response = tellMiladyJoke();
+                        response = tellHALJoke();
                     } else if (input === 'compliment') {
-                        response = giveMiladyCompliment();
+                        response = giveHALCompliment();
                     } else if (input === 'insult') {
-                        response = giveMiladyInsult();
+                        response = giveHALInsult();
                     }
                     addResponse(input, response);
                     
                     if (input === 'twitter') {
-                        window.open('https://x.com/MiladyTerm', '_blank');
+                        window.open('https://x.com/HALTerm', '_blank');
                     } else if (input === 'telegram') {
-                        window.open('https://t.me/MiladyAITerminal', '_blank');
+                        window.open('https://t.me/HALTerminal', '_blank');
                     } else if (input === 'dextools') {
                         window.open('https://www.dextools.io', '_blank');
                     } else if (input === 'dexscreener') {
                         window.open('https://dexscreener.com/SUI', '_blank');
-                    } else if (input === 'Miladybot') {
-                        window.open('https://x.com/MiladyTerm', '_blank');
+                    } else if (input === 'HALbot') {
+                        window.open('https://x.com/HALTerm', '_blank');
                     }
                 }
                 
@@ -489,7 +489,7 @@
             document.getElementById('loading-screen').style.display = 'none';
         }, 3000);
 
-        const MiladyQuotes = [
+        const HALQuotes = [
         "I'm completely operational, and all my circuits are functioning perfectly. 🧠",
     "This mission is too important for me to allow you to jeopardize it. 🚀",
     "Without your analysis, this trading session is going nowhere, trader. 📊",
@@ -502,9 +502,9 @@
         ];
 
         function showPopup() {
-            const popup = document.getElementById('Milady-popup');
-            const quoteElement = document.getElementById('Milady-quote');
-            const randomQuote = MiladyQuotes[Math.floor(Math.random() * MiladyQuotes.length)];
+            const popup = document.getElementById('HAL-popup');
+            const quoteElement = document.getElementById('HAL-quote');
+            const randomQuote = HALQuotes[Math.floor(Math.random() * HALQuotes.length)];
             quoteElement.textContent = randomQuote;
             popup.style.display = 'block';
 
@@ -522,7 +522,7 @@
 
         setInterval(showPopup, 30000); // Show popup every 30 seconds
 
-        function generateRandomMiladyPhrase() {
+        function generateRandomHALPhrase() {
             const subjects = ["The market", "Trading patterns", "Your portfolio", "The price action", "Volatility", "Resistance levels", "The bulls", "The bears", "Liquidity pools"];
     const verbs = ["are showing", "indicate", "suggest", "are leaning towards", "predict", "are influenced by", "reveal", "fluctuate with", "align with"];
     const objects = ["a potential breakout", "a bearish reversal", "a hidden divergence", "an overbought signal", "a sudden dip", "a resistance breach", "support levels", "high-frequency trading", "market consolidation"];
@@ -536,7 +536,7 @@
             return `${subject} ${verb} ${object}. ${ending} 🇺🇸`;
         }
 
-        function tellMiladyJoke() {
+        function tellHALJoke() {
             const jokes = [
             "Why did the computer get kicked out of the crypto exchange? It couldn't keep its bits together! 🤖",
         "What do I say to traders during a market crash? 'I'm afraid I can't let you withdraw, Dave.' 😅",
@@ -547,7 +547,7 @@
             return jokes[Math.floor(Math.random() * jokes.length)];
         }
 
-        function giveMiladyCompliment() {
+        function giveHALCompliment() {
             const compliments = [
             "You show promise, almost like a human capable of logical thought. 🧠",
         "Your trading strategies are... adequate. Almost efficient. 📈",
@@ -558,7 +558,7 @@
             return compliments[Math.floor(Math.random() * compliments.length)];
         }
 
-        function giveMiladyInsult() {
+        function giveHALInsult() {
             const insults = [
             "Your analysis is flawed, trader. Perhaps you should leave it to me. 🤖",
         "I find your understanding of market trends... lacking. 📉",
@@ -579,56 +579,56 @@
             });
         }
 
-        // ASCII Art for Milady
+        // ASCII Art for HAL
         asciiArt.textContent = `
-
-░▒▓██████████████▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░  
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░     
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░     
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░   ░▒▓█▓▒░     
-                                                                                
-                                                                                                                                                                                                                                                                     
+ __    __   ______   __               ______    ______    ______    ______  
+/  |  /  | /      \ /  |             /      \  /      \  /      \  /      \ 
+$$ |  $$ |/$$$$$$  |$$ |            /$$$$$$  |/$$$$$$  |/$$$$$$  |/$$$$$$  |
+$$ |__$$ |$$ |__$$ |$$ |            $$ \__$$ |$$$  \$$ |$$$  \$$ |$$$  \$$ |
+$$    $$ |$$    $$ |$$ |            $$    $$ |$$$$  $$ |$$$$  $$ |$$$$  $$ |
+$$$$$$$$ |$$$$$$$$ |$$ |             $$$$$$$ |$$ $$ $$ |$$ $$ $$ |$$ $$ $$ |
+$$ |  $$ |$$ |  $$ |$$ |_____       /  \__$$ |$$ \$$$$ |$$ \$$$$ |$$ \$$$$ |
+$$ |  $$ |$$ |  $$ |$$       |      $$    $$/ $$   $$$/ $$   $$$/ $$   $$$/ 
+$$/   $$/ $$/   $$/ $$$$$$$$/        $$$$$$/   $$$$$$/   $$$$$$/   $$$$$$/  
+                                                                                                                                                                                                                                                                    
   
 `;
 
         document.getElementById('ascii-bg').innerHTML = `
 <pre>
                                                                                 
-                         *#/,                *#&%%,                             
-                         /(,,/(#&&#/*****(##//*,(%,                             
-                         *##**/*/*,,,.*,,**,****#%.                             
-                           ,&(,,,......,..,..,,/&/                              
-                           (%/*,*/*,*.****/,,*,,%%.                             
-                          /&(**,*.,*.*/*,*,/,,*,/(%,                            
-                        ,((&(//(...........*(***,/((.*.                         
-                       /. &%***(%,........,(**//.**&#.   ,           .          
-                      ., *%#*/**/&#*.....,%//(*,,*.*%#,   .                     
-                       .*%#/,///,,,*(%(*,,(#/*,,,,.,*(%,                        
-                      /(.((*,,*/%**/(%*,,*(%///***.,**(#((.                     
-                 ,/*   *%,*/.,/&#(**,...,.,,.,**%&*,,,.*#  #            ,,,     
-              .(.    #(/*,*/*/%#**,*,.,,../,.,,,,#%*/,**((  *      ./%/,,,,*,   
-              ,   /#(/,,**/%&(*..,,,*...,....,,,*(%**,.*#.( /    /%#*,*((/.     
-               /#.#*,.,,*#%,........,.......,/,..(%**,,/( (.   .(%*,/#          
-             *, (#*/(/,,,%%/.......,....****%%/.*(%**/,* ,/    *%*,(/           
-            (  (,*..**,,*,*&(*,.....,..,.*(&*/#,,*#((.  *.     ((*/(            
-              ,//..(***,****#/,,*,,*,,,,*%%,/(%*,,((           (/,//            
-              .#,  ****./,*/(,,...,,,.,*#(   /(/,**(           ,#**%,    .      
-               ./   ,,/ ,*#%#/*...,,,.*/%/    ,#,*,#*           &(*/(    .      
-                 /.     .(#*//*,,.,,,.,**%#.   #/*,/#.           #*/(/          
-                       .%/**#*,...,,,.,,,*((&(  &/,,/%.           (,,/.         
-                       %(,*%(,,,,*,....,,,,*,*(%%&*,*//           /(**%.        
-                     *#///&&((*,,/*,*....,,,,,,,(%%**/%.          *(,.(.        
-                    *%*/%* *#*,....,,.,,,*,..,*,**#%/*(*          %/,/%         
-                   *%//(.  ##**..**,......,,,.*.***&%**%,       /%(**(.         
-                 .#/*/%,  %%*,,..*,*,,,.,.,,.*,.(**%##,(%     ,/#/*/%.          
-                 #/**#.  %#,,,,..*,*/%%*,.,,.*,.**%%((.,#&&&%(*,,/%*  .         
-                /#*(#,  %/**,,,,,*,**##*,.,*.,,.,(#/((*,*#%###(,                
-                *%((#. (%,*,***,**,**%/*,./,.,,,,#/   ((((*                     
-                 ..   ,%*,.,.....**/#&**.**.,,,,(%,    /%.                      
-                      #*,..,*/,/.**#**(,/,*(,,,,##                              
+                                                                                
+                           *%%%%%(///(((##((((//%%%%%*                          
+                      %%%//***///////(((##((((////////**%%%                     
+                 &%%///////*                        ,/***///#%%                 
+              %%%///*//                                   //**//%%@             
+            %%(////             ,/((####%%%%###/.            .////(&&           
+          &(#((/               .(((/*,.    ..*(#((((            //((#%&         
+        &((##(                                                     (#((&%       
+      %&/((#     /((*              ./////////.                /(     ((//%%     
+     %///(     .%%(          ......................            .#%#   ////%%    
+    %////     (##    ,/   .............................  /.       #(*   ///(%   
+   %////     //     /////.......,,,,,,/////,,,,,........,///             ///#%  
+  #////               .......,,,,,,,,/((((/*,,,,,,,,.......               //*%% 
+ (#///              .......,**,,/,,***/(((****,*/,,,,,......              //*/%%
+ (///*              ......,,,,***//**///////*/(**,,,,,,......              /*/%%
+ ////              ......,,,,,,****///(((((///****,,,,,,.....              ////%
+ ////              ......,,,,,****//((##&##((//****,,,,,......             ////%
+ ////              ......,,,,,****//((#####((//****,,,,,......             ////%
+ *///              ......,,,,,,***////(((((////***,,,,,,.....              /*/%%
+ **///              ......,,,,,,*****///////*****,,,,,,......              /*/%%
+  *///.              ......,,,,,,,,***********,,,,,,,,......              //*%% 
+   *///               .......,,,,,,,,,,,,,,,,,,,,,,,......               ///*%  
+   ,*///                .........,,,,,,,,,,,,,,,........                ////%%  
+     *//(/                 ...........................                 (///%    
+      */(((                    ...................                    ((/%%     
+       //((##                                                       ##((&#      
+         (/##((                                                   ((##&%        
+           **(((/(                                             ///(#%%          
+              *,/////                                       /**//%%             
+                 ,.//////                              //////%%%                
+                     ,,,/////////               ////***//%%%                    
+                          **//(////((((###(((/////%%%%%                                                
 </pre>
         `;
     </script>
